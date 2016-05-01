@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Project For Javascript</title>
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="index.css">
+
+	</head>
+
+	<body>
+
+		<div id="box"></div>
+
+		<script type="text/javascript">
+			
+			var clickedTime, createdTime, reactionTime;
+
+			var box = document.getElementById("box");
+			box.onclick=function() {
+				this.style.display = "none";
+
+				makeBox();
+			};
+
+			function makeBox() {
+				createdTime = Date.now();
+
+				var time = Math.random();
+				time += 6;
+				time *= 1000;
+				time = Math.floor(time);
+				setTimeout(function() {
+					box.style.display = "block";
+				}, time);
+			}
+
+		</script>
+
+	</body>
+
+</html>
