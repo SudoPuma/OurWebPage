@@ -9,37 +9,18 @@
 		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="index.css">
+		
 
 	</head>
 
 	<body>
 
+		<h1>Test Reactions</h1>
+		<p>Click on the boxed and circles as quicly as you can!</p>
+		<p class="bold">Your time: <span id="time">(not attempted yet)</span></p>
 		<div id="box"></div>
-
-		<script type="text/javascript">
-			
-			var clickedTime, createdTime, reactionTime;
-
-			var box = document.getElementById("box");
-			box.onclick=function() {
-				this.style.display = "none";
-
-				makeBox();
-			};
-
-			function makeBox() {
-				createdTime = Date.now();
-
-				var time = Math.random();
-				time += 6;
-				time *= 1000;
-				time = Math.floor(time);
-				setTimeout(function() {
-					box.style.display = "block";
-				}, time);
-			}
-
-		</script>
+		
+		<script type="text/javascript" src="index.js"></script>
 
 	</body>
 
