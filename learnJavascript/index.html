@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>My Learning of Javascript In HTML</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="index.css">
+
+	</head>
+
+	<body>
+
+		<button id="mybutton">You know you want to click me...</button>
+
+		<button id="textChanger">Change first div text</button>
+		<div id="firstDiv">
+	
+			Random crap that gets replaced!
+
+		</div>
+	
+		<button id="textAppender">Append some text</button>
+		<div id="secondDiv">
+
+			Javascript is...
+
+		</div>
+
+		<button id="textCreator">Create some text!</button>
+		<div id="empty"></div>
+
+		<p id="text">Some text</p>
+
+		<br />
+		<br />
+		<br />
+
+		<button id="deleteCircle">Make Circle Disappear!</button>
+		<div id="circle"></div>
+		
+		<br />
+		<br />
+		<br />
+
+		<button id="stylesChanger">Change first div styles</button>
+		<input id="myInput" />
+		<button id="changeText">Change the text!</button>
+		<div id="fourthDiv">
+
+			This is some more text!
+
+		</div>
+
+		<br />
+		<br />
+
+		<button id="arrayButton">Fills in with values inside the array</button>
+
+		<div id="fifthDiv">Will be changed with data inside the array</div>
+
+		<br />
+		<br />
+
+		<p>What is the weather?</p>
+
+		<input id="weatherInput" />
+		<button id="myButton">Submit</button>
+
+		<br />
+		<br />
+
+		<p>How many fingers am I holding up?</p>
+		<input id="fingersInput" />
+		<button id="fingerButton">Submit</button>
+
+		<br />
+		<br />
+
+		<p id="arrayString"></p>
+
+		<br />
+		<br />
+
+		<p>How many fingers are you holding up?</p>
+		<input id="myRandomNumber" />
+		<button id="randomNumberButton">Guess!</button>
+
+		<br />
+		<br />
+
+		<p id="sumResult"></p>
+
+
+		<script type="text/javascript">
+		
+			//This is a comment
+			/*
+				This is a multi-line
+				comment!
+		 	*/
+
+			document.getElementById("text").innerHTML = "Some more text";
+		
+			document.getElementById("mybutton").onclick=function() {
+				alert("You clicked me!");
+			};
+
+			document.getElementById("textChanger").onclick=function() {
+				document.getElementById("firstDiv").innerHTML = "This is some text that will be replaced by the click of the button!";
+			};
+
+			document.getElementById("textAppender").onclick=function() {
+				document.getElementById("secondDiv").innerHTML = document.getElementById("secondDiv").innerHTML + "amazing! =D";
+			};
+
+			document.getElementById("textCreator").onclick=function() {
+				document.getElementById("empty").innerHTML = "<ul><li>This</li><li>Is</li><li>Cool!</li</ul>";
+			};
+
+			document.getElementById("deleteCircle").onclick=function() {
+				//document.getElementById("circle").style.display = "none";
+				document.getElementById("deleteCircle").parentNode.removeChild(document.getElementById("circle"));
+			};
+
+			var divID = "fourthDiv";
+
+			document.getElementById("stylesChanger").onclick=function() {
+				document.getElementById(divID).style.display = "none";
+			};
+
+			document.getElementById("changeText").onclick=function() {
+				var newText = document.getElementById("myInput").value;
+
+				document.getElementById("fourthDiv").innerHTML = newText;
+			};
+
+			var myArray = new Array();
+			myArray[0] = "pizza";
+			myArray[1] = "chocolate";
+
+			console.log(myArray);
+			
+			myOtherArray = ["rain", "sunshine"];
+			myOtherArray.push("snow");
+			myOtherArray.splice(1, 2);
+			myOtherArray.splice(2, 0, "hail", "cloudy");
+
+			var sizeOfArray = myOtherArray.length;
+
+			console.log(myOtherArray);
+			document.getElementById("arrayButton").onclick=function() {
+				document.getElementById("fifthDiv").innerHTML = myArray[0];
+			};
+
+			// var x = 2;
+
+			// if (x == 1) {
+			// 	alert("x is 1");
+			// } else {
+			// 	alert("x is not 1!");
+			// }
+
+			document.getElementById("myButton").onclick=function() {
+				if (document.getElementById("weatherInput").value == "rain") {
+					alert("It's raining!");
+				} else {
+					alert("It's not raining! Yay =D");
+				}
+			};
+
+			document.getElementById("fingerButton").onclick=function() {
+				var x = Math.floor((Math.random() * 6));
+				
+				if (x == document.getElementById("fingersInput").value) {
+					alert("That's correct! Nice!");
+				} else {
+					alert("Nice try, but it was " + x);
+				}
+			};
+			
+			var arrayString = "";
+			var myArray2 = ["pizza", "chocolate", "chips", "pasta"];
+			
+			for (var i = 0; i < myArray2.length - 1; ++i) {
+				arrayString += myArray2[i] + " ";
+			}
+
+			arrayString += myArray2[myArray2.length - 1];
+
+			document.getElementById("arrayString").innerHTML = arrayString;
+
+			document.getElementById("randomNumberButton").onclick=function() {
+				var done = false;
+				var result, answer, guesses = 1;
+				while(!done) {
+					result = Math.floor(Math.random() * 6);
+					answer = document.getElementById("myRandomNumber").value;
+
+					if (answer == result) {
+						done = true;
+					} else {
+						guesses++;
+					}
+				}
+
+				alert("Finally got it! It took " + guesses + " times to get the value " + result + "!");
+			};
+
+			function sum(num1, num2) {
+				return num1 + num2;
+			}
+
+			document.getElementById("sumResult").innerHTML = sum(3242, 3423);
+
+		</script>
+
+	</body>
+
+</html>
