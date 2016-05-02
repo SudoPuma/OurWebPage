@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Learning jQuery and Examples</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	</head>
+	
+	<body>
+		
+		<div class="square"></div>
+		<div class="square"></div>
+		<div id="circle"></div>
+
+		<p>This is some text</p>
+		
+		<iframe src="http://www.cnn.com/"></iframe>
+		
+		<br />
+		<br />
+
+		<button id="fader">Fade out</button>
+		<button id="fadeIn">Fade in</button>
+		<p>Hey! What's up? Hello!</p>
+		
+		<div id="nextDiv">
+				
+				<h1>Asyncronous Javascript And XML</h1>
+
+		</div>
+		
+	
+		<script>
+
+			
+// 			if (typeof jQuery != 'undefined') {
+// 				alert("jQuery is installed!");
+// 			} else {
+// 				alert("jQuery is not installed!");
+//			 }
+
+// 			$(".square").click(function() {
+// 			alert("Square clicked!");
+// 			alert($('.square').css("width"));
+// 			});
+
+			$("#circle").click(function() {
+				// alert($('p').html());
+				// $("p").html("The text has been changed!");
+				// alert("Circle clicked!");
+				$(this).animate({
+					width: "300px",
+					height: "300px",
+					borderRadius: "3150px",
+					marginLeft: "100px",
+					marginTop: "100px"
+				}, 800);
+			});
+
+//			$('#circle').hover(function() {
+//				$('p').html("Changed!");
+//				alert($('iframe').attr("src"));
+//				$('iframe').attr("src", "http://www.ecowebhosting.co.uk");
+//				$('.square').fadeOut();
+//			});
+
+//			$("div").click(function() {
+//				alert("Div clicked!");
+//				alert($(this).css("width", "400px"));
+//				$(this).hide();
+//				$(this).fadeOut();
+//			});
+
+// 			$('#fader').click(function() {
+// 				$('p').fadeOut("slow", function() {
+// 					alert("Fade out complete");
+// 				});
+//				$('p').fadeOut(200);
+// 			});
+
+// 			$('#fadeIn').click(function() {
+// 				$('p').fadeIn();
+// 			});
+// 			
+			//	This is how you get AJAX in jQuery
+			// $.get("test.html", function(data) {
+			// 	alert(data);
+			// });
+
+			$.ajax({
+				url: "test.html"
+			}).done(function(data) {
+//				alert(data);
+				$('h1').append(data);
+			});
+
+//			var regex = /great/i;
+			var regex = /e/g;
+			var string = "Regex is Great!";
+
+			var result = string.match(regex);
+
+			alert(result);
+
+		</script>
+
+	</body>
+</html>

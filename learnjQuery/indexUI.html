@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	
+		<title>Learning jQueryUI</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="indexUI.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="square">Drag Me Around!</div>
+		<div id="resizeable">Resize Me!</div>
+		<div id="target">Drop something inside me!</div>
+
+		<br />
+		<br />
+		
+		<div id="accordion">
+			
+			<h3>Title</h3>
+			<div>
+
+				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+
+			</div>
+
+			<h3>Title</h3>
+			<div>
+
+				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+
+			</div>
+
+			<h3>Title</h3>
+			<div>
+
+				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+
+			</div>
+
+			<h3>Title</h3>
+			<div>
+
+				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+
+			</div>
+
+			<h3>Title</h3>
+			<div>
+
+				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+
+			</div>
+
+			<h3>Title</h3>
+			<div>
+
+				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</p>
+
+			</div>
+		
+		</div>
+
+		<h4>Sort Me!</h4>
+		<ul>
+			<li>C++</li>
+			<li>Java</li>
+			<li>Python</li>
+			<li>Ruby</li>
+			<li>PHP</li>
+		</ul>
+
+		<script>
+			
+			$("#square").draggable();
+			$("#resizeable").resizable();
+			$("#target").droppable({
+				drop: function(ui, event) {
+					$("#target").css("background-color", "blue");
+				}
+			});
+
+			$("#accordion").accordion();
+			$("ul").sortable();
+
+		</script>
+
+	</body>
+</html>
