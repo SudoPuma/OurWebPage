@@ -1,0 +1,33 @@
+#wrapper {
+	width: 500px;
+	margin: 0 auto;
+	font-family: helvetica;
+	font-size: 1.2em;
+}
+
+input {
+	width: 200px;
+	height: 30px;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 1.2em;
+	border: 1px solid grey;
+	margin-bottom: 8px;
+}
+
+label {
+	width: 200px;
+	float: left;
+	padding-top: 7px;
+}
+
+#submitButton {
+	height: 50px;
+	width: 100px;
+	margin-left: 200px;
+}
+
+#errorMessage {
+	color: red;
+	margin-bottom: 10px;
+}
