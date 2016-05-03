@@ -1,0 +1,25 @@
+.box {
+	border: 1px solid grey;
+	background-color: #d3d3d3;
+}
+
+.large {
+	font-size: 300%;
+	color: red;
+}
+
+#div1 {
+	background-color: blue;
+}
+
+#div2 {
+	background-color: red;
+}
+
+#div3 {
+	background-color: green;
+}
+
+.contentDiv {
+	height: 800px;
+}
