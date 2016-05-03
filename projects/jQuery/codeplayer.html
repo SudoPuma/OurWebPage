@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+		<title>CodePlayer Project using jQuery</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" type="text/css" href="codeplayer.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<div id="menuBar">
+
+				<div id="logo">CodePlayer</div>
+				<div id="buttonDiv">
+
+					<button id="runButton">Run</button>
+
+				</div>
+
+				<ul id="toggles">
+					<li class="toggle selected">HTML</li>
+					<li class="toggle">CSS</li>
+					<li class="toggle">JS</li>
+					<li  class="toggle selected" style="border-right: none">Result</li>
+				</ul>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="codeContainer" id="HTMLContainer">
+				
+				<div class="codeLabel">HTML</div>
+				<textarea id="htmlCode"><div id="test"></div></textarea>
+
+			</div>
+
+			<div class="codeContainer" id="CSSContainer">
+				
+				<div class="codeLabel">CSS</div>
+				<textarea id="cssCode">html {background-color: red;}</textarea>
+
+			</div>
+
+			<div class="codeContainer" id="JSContainer">
+				
+				<div class="codeLabel">JS</div>
+				<textarea id="jsCode">document.getElementById("test").innerHTML = "It's working!"</textarea>
+
+			</div>
+
+			<div class="codeContainer" id="ResultContainer">
+				
+				<div class="codeLabel">Result</div>
+				<iframe id="resultFrame"></iframe>
+
+			</div>
+
+		</div>
+
+		<script>
+			
+			var windowHeight = $(window).height();
+			var menuBarHeight = $("#menuBar").height();
+
+			$(".codeContainer").height((windowHeight - menuBarHeight) + "px");
+
+			$(".toggle").click(function() {
+				$(this).toggleClass("selected");
+
+				var activeDiv = $(this).html();
+
+				$("#" + activeDiv + "Container").toggle();
+
+				var showingDivs = $(".codeContainer").filter(function() {
+					return ($(this).css("display") != "none");
+				}).length;
+
+				var divWidth = 100 / showingDivs;
+
+				$(".codeContainer").width(divWidth + "%");
+			});
+
+			$("#runButton").click(function() {
+				$("iframe").contents().find("html").html("<style>" + $("#cssCode").val() + "</style>" + $("#htmlCode").val());
+
+			//	This allows you to run arbitrary javascript code in here, but because of safety reasons
+			//	I commented it out.
+			//	Delete the comment if you would like to run it locally
+			
+//			document.getElementById("resultFrame").contentWindow.eval($("#jsCode").val());
+
+			});
+
+		</script>
+	
+	</body>
+
+</html>
